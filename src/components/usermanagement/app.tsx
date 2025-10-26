@@ -1,3 +1,4 @@
+import { users } from "@/app/users/constants"
 import UserTable from "./dataTable"
 
 export const UserManagement = async () => {
@@ -30,7 +31,7 @@ export const UserManagement = async () => {
 
     return (
         <div className="container mx-auto w-full bg-white dark:bg-[var(--darkpurple)] ">
-            <UserTable />
+            <UserTable users={users} />
         </div>
     )
 }
