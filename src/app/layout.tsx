@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-100 dark:bg-[#020618]`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} storageKey="admin-dashboard-theme">
           <ThemeSwitch />

@@ -14,9 +14,11 @@ import {
 import Link from "next/link"
 import { sideBarPrimaryItems, sideBarPrimarySubItems } from "./constants"
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export const SideBar = () => {
     const { open, toggleSidebar } = useSidebar();
+    const pathname = usePathname();
 
     return (
         <div className="relative">
@@ -30,11 +32,11 @@ export const SideBar = () => {
                         <SidebarGroupContent>
                             <SidebarMenu className={open ? "items-start" : "items-center"}>
                                 {sideBarPrimaryItems.map((item) => (
-                                    <SidebarMenuItem key={item.title}>
-                                        <SidebarMenuButton asChild>
-                                            <Link href={item.url}>
-                                                <item.icon />
-                                                <span>{item.title}</span>
+                                    <SidebarMenuItem key={item.title} className="w-full">
+                                        <SidebarMenuButton asChild className="data-[active=true]:bg-purple-950 hover:bg-purple-950" data-active={pathname === item.url ? true : false}>
+                                            <Link href={item.url} className="text-[18px]">
+                                                <item.icon className={`group-hover/menu-item:text-white ${pathname === item.url ? "text-white" : "text-slate-400 "}`} />
+                                                <span className={`group-hover/menu-item:text-white ${pathname === item.url ? "text-white" : "text-slate-400 "}`}>{item.title}</span>
                                             </Link>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
@@ -44,11 +46,11 @@ export const SideBar = () => {
                         <SidebarGroupContent>
                             <SidebarMenu className={open ? "items-start" : "items-center"}>
                                 {sideBarPrimarySubItems.map((item) => (
-                                    <SidebarMenuItem key={item.title}>
-                                        <SidebarMenuButton asChild>
-                                            <Link href={item.url}>
-                                                <item.icon />
-                                                <span>{item.title}</span>
+                                    <SidebarMenuItem key={item.title} className="w-full">
+                                        <SidebarMenuButton asChild className="data-[active=true]:bg-purple-950 hover:bg-purple-950" data-active={pathname === item.url ? true : false}>
+                                            <Link href={item.url} className="text-[18px]">
+                                                <item.icon className={`group-hover/menu-item:text-white ${pathname === item.url ? "text-white" : "text-slate-400 "}`} />
+                                                <span className={`group-hover/menu-item:text-white ${pathname === item.url ? "text-white" : "text-slate-400 "}`}>{item.title}</span>
                                             </Link>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>

@@ -1,11 +1,11 @@
 import UserTable from "../../components/usermanagement/dataTable"
-import { users } from "./constants";
+import { historyData } from "./constants";
 
 // include pagination, bulk edit, search filter, export csv option
-const Users = () => {
+const History = () => {
     return (
-        <UserTable users={users} />
+        <UserTable users={historyData} />
     )
 }
 
-export default Users;
+export default History;

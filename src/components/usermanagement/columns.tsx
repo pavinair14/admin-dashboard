@@ -55,7 +55,7 @@ export const columns: ColumnDef[] = [
         header: "Revenue",
         cell: ({ row }) => (
             <div className="text-right font-medium">
-                ${row.getValue("revenue").toFixed(2)}
+                ${row?.getValue?.("revenue")?.toFixed(2)}
             </div>
         ),
     },

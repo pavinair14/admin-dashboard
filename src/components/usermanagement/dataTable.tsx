@@ -1,10 +1,9 @@
 "use client";
 
 import { useReactTable, getCoreRowModel, flexRender } from "@tanstack/react-table";
-import { users } from "./constants";
 import { columns } from "./columns";
 
-export default function UserTable() {
+export default function UserTable({ users }) {
     const table = useReactTable({
         data: users,
         columns,
